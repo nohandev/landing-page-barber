@@ -1,0 +1,278 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.bg-home {
+  position: relative;
+}
+
+.bg-home::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url('../assets/bg.svg');
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+.hero {
+  color: $white-normal;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+  h1 {
+    text-align: center;
+    height: 150%;
+    max-width: 940px;
+    font: 40px;
+  }
+
+  p {
+    text-align: center;
+    margin: 14px 0;
+  }
+}
+
+.contact-btn {
+  padding: 15px 28px;
+  color: $white-normal;
+  background-color: $red-normal;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.contact-btn:hover {
+  animation: scaleButton 0.7s infinite alternate;
+}
+
+@keyframes scaleButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .hero {
+    min-height: 60vh;
+  }
+  h1 {
+    font-size: 30px;
+    padding: 0px 15px;
+    width: 100%;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .hero h1 {
+    font-size: 24px;
+  }
+
+}
+
+.about {
+  background-color: $primary-normal;
+  overflow: hidden;
+  color: $white-normal;
+}
+
+.about-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 35px 15px 65px 15px;
+
+  div {
+    flex: 1;
+  }
+  
+  img {
+    max-width: 570px;
+  }
+}
+
+.about-description {
+  h2 {
+    font-size: 40px;
+    margin: 25px 0;
+  }
+
+  p {
+    margin-bottom: 15px;
+    line-height: 150%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+.services {
+  background-color: $white-normal;
+  color: $primary-dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 14px;
+}
+
+.services-content {
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 150%;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 780px;
+  }
+}
+
+.haircuts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.haircut {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: $white-normal;
+  border-radius: 8px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.45);
+  overflow: hidden ;
+
+  img {
+    width: 100%;
+    transition: ease-in-out 0.3s;
+    max-width: 355px;
+  }
+}
+
+.haircut img:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.haircut-description {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: $white-normal;
+  z-index: 99;
+  font-size: 1,5vw;
+
+  button {
+    color: $white-normal;
+    background-color: $red-normal;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 0;
+    cursor: default;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .haircuts {
+    flex-direction: column;
+  }
+
+  .haircut img {
+    max-width: 740px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 0;
+  gap: 25px;
+  color: $white-normal;
+
+  p {
+    text-align: center;
+  }
+
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  color: $white-normal;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 15px;
+  z-index: 99;
+  img {
+    max-width: 74px;
+    transition: ease-in-out 0.4s;
+  }
+
+  img:hover {
+    transform: scale(1.15);
+  }
+}
+
+.whatsapp-btn .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  top: 10px;
+  left: -145px;
+  background-color: $second-dark;
+  color: $white-normal;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.whatsapp-btn:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .whatsapp-btn {
+    img {
+      max-width: 50px;
+    }
+  }
+}
